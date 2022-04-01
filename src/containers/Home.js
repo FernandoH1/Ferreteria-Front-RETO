@@ -10,12 +10,7 @@ import { getAuth, signOut } from "firebase/auth";
 const auth = getAuth(firebaseApp);
 
 
-  
-
-
-
 function Home({ user,setUser }) {
-
   const cerrarSesion = ()=>{
     let l = signOut(auth)
     .then(() => {
