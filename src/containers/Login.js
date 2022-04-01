@@ -11,7 +11,7 @@ import {
 import { getFirestore, doc, collection, setDoc } from "firebase/firestore";
 const auth = getAuth(firebaseApp);
 
-function Login() {
+function Login(props) {
   const firestore = getFirestore(firebaseApp);
   const [isRegistrando, setIsRegistrando] = useState(false);
 
@@ -38,20 +38,33 @@ function Login() {
 
     console.log("submit", email, password, rol);
 
-    if(password.length<6){
-      window.alert("nop");
-      return false;
-    }
-
-
     if (isRegistrando) {
       // registrar
       registrarUsuario(email, password, rol);
     } else {
       // login
-      signInWithEmailAndPassword(auth, email, password).catch(function(error){
-        window.alert("El Usuario no Existe[No Registrado]");
-      });
+     signInWithEmailAndPassword(auth, email, password)  
+     .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      let email = user.email;
+      
+      let usuario ={
+        email: user.email,
+        usuario: email.split("@")[0],
+        rol:"admin"
+      }
+      props.setUser(usuario);
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+      
+     
+
     }
   }
 
