@@ -19,8 +19,9 @@ const HistorialVentas = () => {
         fetch(HOST_API + "/factura", requestOptions)
             .then(response => response.json())
             .then((p) => {
-              
+            //  console.log(p);
                 setFacturas(p);
+                
             });
     }
     return ( 

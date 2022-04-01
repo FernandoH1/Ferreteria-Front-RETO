@@ -47,13 +47,13 @@ const GestionCliente = () => {
     return ( <>
     <h1>Gestion Cliente</h1>
     <form onSubmit={registrarCliente}>
-        <label>Nombre</label>
+        <label>Nombre: </label>
         <input onChange={ event => {setNombre(event.target.value)}}></input>
 
-        <label>Celular</label>
+        <label>Celular: </label>
         <input onChange={ event => {setCelular(event.target.value)}}></input>
            
-        <label>C.I.</label>
+        <label>C.I: </label>
         <input onChange={ event => {setCI(event.target.value)}}></input>
         <button className='btn btn-primary' type='submit'>Crear Cliente</button>
     </form>

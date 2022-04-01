@@ -34,7 +34,12 @@ const ListaProducto = () => {
     useEffect(() => {
         cargarProductos();
         cargarClientes();
+      
     }, []);
+
+    const clienteSelectedDefault = (cliente)=>{
+        setClienteSelected(cliente);
+    }
 
     const cargarProductos = () => {
         const requestOptions = {
@@ -60,6 +65,7 @@ const ListaProducto = () => {
             .then(response => response.json())
             .then((clients) => {
                 setClientes(clients);
+                clienteSelectedDefault(clients[0]);
             });
     }
 
@@ -97,7 +103,6 @@ const ListaProducto = () => {
         e.target.reset();
 
     }
-
 
     const descontaElProductoStock = (productosComprados) => {
         productosComprados.map((productoComprado) => {

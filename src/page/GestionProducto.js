@@ -69,13 +69,13 @@ const GestionProducto = () => {
     return (<>
         <h1>Gestion Praducto</h1>
         <form onSubmit={registrarProducto}>
-            <label>Nombre</label>
+            <label>Nombre: </label>
             <input onChange={event => { setNombre(event.target.value) }}></input>
 
-            <label>Cantidad</label>
+            <label>Cantidad: </label>
             <input onChange={event => { setCantidad(event.target.value) }}></input>
 
-            <label>Precio</label>
+            <label>Precio: </label>
             <input onChange={event => { setPrecio(event.target.value) }}></input>
 
             <label>Proveedor: </label>

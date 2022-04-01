@@ -32,12 +32,11 @@ const Producto = (props) => {
     }
     
     return <div>
-        <label>nombre: {props.producto.nombre}</label><br/>
-        <label>Precio:{props.producto.precio} $</label><br/>
+        <label>Nombre: {props.producto.nombre}</label><br/>
+        <label>Precio: $ {props.producto.precio} </label><br/>
         <label>Stock: {props.producto.cantidad}</label><br/>
         <input type="number" onChange={(e)=>{cambiarCantidad(e.target)}}></input>
-        <button onClick={addProducto}>ADD</button>
-       
+        <button className='btn btn-success' onClick={addProducto}>Comprar Producto</button>
     </div>
     
 }
