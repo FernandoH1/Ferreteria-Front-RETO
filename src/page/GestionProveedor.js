@@ -44,20 +44,32 @@ const GestionProveedor = () => {
     }
 
 
-    return  <>
+    return  <gestores>
     <h1>Gestion Proveedor</h1>
-    <form onSubmit={registrarProveedor}>
-        <label>Nombre</label>
-        <input onChange={ event => {setNombre(event.target.value)}}></input>
+    <form onSubmit={registrarProveedor} className="gestionFrom">
+    <table>
+        <tr>
+        <td> <label>Nombre</label></td>
+        <td><input onChange={ event => {setNombre(event.target.value)}}></input> </td>
+        </tr>
 
-        <label>Celular</label>
-        <input onChange={ event => {setCelular(event.target.value)}}></input>
-           
-        <label>C.I.</label>
-        <input onChange={ event => {setCI(event.target.value)}}></input>
-        <button className='btn btn-primary' type='submit'>Crear Proveedor</button>
+        <tr>
+         <td> <label>Celular</label> </td>
+        <td><input onChange={ event => {setCelular(event.target.value)}}></input> </td>
+        </tr> 
+        <tr>
+        <td><label>C.I.</label></td>
+        <td><input onChange={ event => {setCI(event.target.value)}}></input> </td>
+        </tr> 
+        <tr>
+            <td colSpan="2"> 
+            <button className='btn btn-primary' type='submit'>Crear Proveedor</button>
+            </td>
+        </tr>
+        </table> 
+       
     </form>
-    </> 
+    </gestores> 
 }
  
 export default GestionProveedor;

@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 .div-logo{
     width: 100%;
     display: flex;
@@ -47,4 +49,211 @@ input{
     display: flex;
     justify-content: center;
     font-size: 1.5rem;
+}
+.ventanaSecundaria{
+    text-align: center;
+}
+.factura{
+    margin: auto;
+    border: 1px solid;
+    width: 40%;
+    min-width: 400px;
+    background-color:rgba(0, 0, 0, 0.184);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+dato{
+   margin-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding: 5px;
+   
+}
+.ventanaSecundaria > .producto{
+    background-color:rgba(0, 0, 0, 0.184);
+    margin-bottom: 10px;
+}
+table{
+    margin:auto;
+    
+}
+table > tr{
+    background-color: rgba(80, 80, 80, 0.337);
+  
+}
+
+table > tr > td{
+    margin-bottom: 10px;
+}
+
+
+.producto{
+    text-align: left;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid;
+    margin: auto;
+    display: inline-block;
+   
+   
+
+}
+dato > contenido{
+    display: block;
+    width: 80%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.591);
+    border-radius: 30px;
+    margin-bottom: 5px;
+    
+}dato > titutlo{
+    margin-bottom: 5px;
+    display: block;
+    width: 20%;
+    float: left;
+   
+}
+.menu{
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+
+header{
+	margin-top:10px;
+	width:100%;
+	height:150px;
+	overflow:hidden;
+	position:relative;	
+  
+}
+
+nav {
+	top:-20px;
+	position:absolute;
+	left:0;
+	right:0;
+	margin:20px auto;
+	max-width:1000px;
+	width:90%;
+	}
+
+nav ul {
+	list-style:none;
+}
+
+nav > ul {
+	display:table; /* tamaño simian y muestren en caja*/
+	width:100%;				/* overflow:hidden;  todo lo que sobresalga del menu desaparesca */
+	background:rgb(247, 154, 60);
+	position:relative;	
+}
+
+nav > ul li {
+	display:table-cell; /* van a tener una pocision de selda */
+}
+/* sub menu */
+nav > ul > li:hover > ul {
+ display:block;
+ height:100%;
+}
+
+nav > ul > li > ul {
+	display:block;
+	position:absolute;
+	background:rgb(189, 96, 2);
+	left:0;
+	right:0;
+	overflow:hidden;
+	height:0%;
+	-webkit-transition:all .3s ease; /* efecto de bajada  en animacion de 3 seg */
+    -moz-transition:all .4s ease;
+    -o-transition:all .4s ease;
+    transition:all .4s ease;
+
+}
+
+
+/* sub menu */
+.btnCerrarSesion{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffc517;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+nav > ul li a {
+	color:#fff;
+	display:block; /* para poder cmabiarle los tamaños */
+    line-height:20px; 
+    padding:20px;
+    position: relative;
+    text-align: center;
+    text-decoration:none;
+    
+}
+
+nav > ul > li > ul > li a:hover {
+	background:#ffc517;
+    color: #fff;
+}
+
+.gestionFrom{
+    display: block;
+    width: 70%;
+    background-color: #ffffff;
+    margin: auto;
+
+}
+
+gestores{
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+}
+.gestionFrom > table{
+    background-color: rgba(0,0,0,0);
+    max-width: 500px;
+    margin-bottom: 5px;
+    width: 100%;
+   
+}
+
+.gestionFrom > label{
+   position: relative;
+    display: block;
+    background-color: wheat;
+}
+
+.gestionFrom  input{
+    background-color: rgba(206, 9, 9, 0);
+    position: relative;
+    display: block;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+.gestionFrom  input:hover{
+    border-bottom: 2px solid rgb(16, 32, 255);
+}
+
+.gestionFrom > table > tr{
+    background-color: #fff;
+}
+.gestionFrom > tr > td{
+    background-color: rgb(233, 67, 67);
+}
+
+
+
+.gestionFrom > button{
+    display: block;
+    width: 100%;
+
 }

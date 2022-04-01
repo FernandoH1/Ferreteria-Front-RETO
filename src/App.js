@@ -46,6 +46,7 @@ function App() {
   });
 
  return <>{user ? <Home user={user} /> : <Login />}</>;
+
 }
 
 export default App;

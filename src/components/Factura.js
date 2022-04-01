@@ -4,20 +4,31 @@ import ProductoSinStock from './ProductoSinStock';
 const Factura = (props) => {
   
     return (  
-        <div>
+        <div className='factura'>
+           <dato>
+            <titutlo> Fecha:  </titutlo>
+            <contenido>{props.facture.fecha}</contenido>
+           </dato>
+         
+           <dato>
+           <titutlo>Nombre: </titutlo>
+           <contenido>   {props.facture.nombreCliente.nombre} </contenido>
+           <titutlo>  CI:  </titutlo>
+           <contenido>     {props.facture.nombreCliente.documentoID} </contenido>
+              
+            </dato>
+            <dato>
+                <titutlo> Atencion Cliente:</titutlo>
+                <contenido> {props.facture.atencionCliente}</contenido>
+            </dato>
+            <dato>
+                <titutlo>Precio total:</titutlo>
+                <contenido> {props.facture.totalPago}</contenido>
+            </dato>
+               
+          
             <h3>
-                Fecha: {props.facture.fecha}
-            </h3>
-            <h3>
-                Nombre: {props.facture.nombreCliente.nombre}
-                <br/>
-                CI: {props.facture.nombreCliente.documentoID}
-            </h3>
-            <h3>
-                Atencion Cliente: {props.facture.atencionCliente}
-            </h3>
-            <h3>
-               Precio total: {props.facture.totalPago}
+               
             </h3>
             {props.facture.productosPagos.map(p =>(
                 <ProductoSinStock key= {p.id}

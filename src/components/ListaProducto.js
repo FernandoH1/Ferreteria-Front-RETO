@@ -99,8 +99,9 @@ const ListaProducto = () => {
             .then((factura) => {
                 console.log(factura);
                 descontaElProductoStock(factura.productosPagos)
+                setProductosSelect([]);
             });
-        e.target.reset();
+            e.target.reset();
 
     }
 
@@ -193,14 +194,23 @@ const ListaProducto = () => {
                 </tr>
             </table>
             <form onSubmit={generarFactura}>
-                <h3>Cliente CI</h3>
-                <select onChange={event => { seleccionarCliente(event.target.value) }}>
+                <table>
+                    <tr>
+                    <td>Cliente CI</td>
+                    <td>
+                    <select onChange={event => { seleccionarCliente(event.target.value) }}>
                     {clientes.map(cliente => (
 
                         <option key={cliente.id} value={cliente.id}>{cliente.documentoID}</option>
                     ))}
+                   
                 </select>
-                <input type="submit" value="Generar Compra"></input>
+                </td>
+                </tr>
+                </table>
+                
+
+                <button class="btn btn-success" type="submit">Generar Compra</button>
             </form>
         </div>
     </div>

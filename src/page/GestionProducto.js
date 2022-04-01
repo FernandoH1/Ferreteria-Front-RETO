@@ -20,28 +20,28 @@ const GestionProducto = () => {
         fetch(HOST_API + "/proveedor", requestOptions)
             .then(response => response.json())
             .then((proveedores) => {
-               setProveedores(proveedores);
-               setProveedor(proveedores[0].id);
+                setProveedores(proveedores);
+                setProveedor(proveedores[0].id);
             });
     }, []);
 
 
-    
+
     const registrarProducto = (e) => { //registra los clientes cuando hace click en el boton y limpia los campos
         e.preventDefault();
-    
+
         let p = proveedores.find(provedor => provedor.id == proveedor);
-       
+
         if (validarDatos) {
 
             let request = {
                 "nombre": nombre,
                 "cantidad": cantidad,
                 "precio": precio,
-                "proveedor":p
+                "proveedor": p
             }
 
-           const requestOptions = {
+            const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(request)
@@ -68,25 +68,33 @@ const GestionProducto = () => {
 
     return (<>
         <h1>Gestion Praducto</h1>
-        <form onSubmit={registrarProducto}>
-            <label>Nombre: </label>
-            <input onChange={event => { setNombre(event.target.value) }}></input>
+        <form onSubmit={registrarProducto} className="gestionFrom" >
+            <table>
+                <tr>
+                    <td><label>Nombre: </label></td>
+                    <td><input onChange={event => { setNombre(event.target.value) }}></input></td>
+                </tr>
+                <tr>
+                    <td><label>Cantidad: </label></td>
+                    <td> <input onChange={event => { setCantidad(event.target.value) }}></input></td>
+                </tr>
+                <tr>
+                    <td><label>Precio: </label></td>
+                    <td><input onChange={event => { setPrecio(event.target.value) }}></input></td>
+                </tr>
+                <tr>
+                    <td><label>Proveedor: </label></td>
+                    <td><select onChange={event => { setProveedor(event.target.value) }}>
+                        {proveedores.map(proveedor => (
 
-            <label>Cantidad: </label>
-            <input onChange={event => { setCantidad(event.target.value) }}></input>
-
-            <label>Precio: </label>
-            <input onChange={event => { setPrecio(event.target.value) }}></input>
-
-            <label>Proveedor: </label>
-            <select onChange={event => { setProveedor(event.target.value)}}>
-                {proveedores.map(proveedor => (
-                  
-                    <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
-                ))}
-            </select>
-            <br></br>
-            <button className='btn btn-primary' type='submit'>Registrar Producto</button>
+                            <option key={proveedor.id} value={proveedor.id}>{proveedor.nombre}</option>
+                        ))}
+                    </select></td>
+                </tr>
+                <tr>
+                    <td colSpan="2"><button className='btn btn-primary' type='submit'>Registrar Producto</button></td>
+                </tr>
+            </table>
         </form>
     </>)
 }

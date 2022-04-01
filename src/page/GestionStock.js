@@ -44,13 +44,11 @@ const GestionStock = () => {
    
    { productos.map(producto => (
     <ProductoSinStock
-     producto={producto }
-    
+
+     producto={producto}
+     
     />
    ))}
-   
-
-
     </> );
 }
  

@@ -73,14 +73,15 @@ const HistorialVentas = () => {
             });
     }
     return ( 
-        <div> Ventas
+        <div> 
+            <h1>Ventas:</h1> 
+            <button className="btn btn-primary" onClick={descargarPdFFactura}>Descargar PDF</button>  
             {facturas.map( factura =>(
                  <Factura key={factura.consecutivo_de_facturas}
                     facture={factura}
 
                  /> 
-            ))}
-         <button className="btn btn-primary" onClick={descargarPdFFactura}>Descargar PDF</button>      
+            ))}    
         </div>
        
     );

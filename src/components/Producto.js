@@ -31,7 +31,7 @@ const Producto = (props) => {
        props.setSelected(p);
     }
     
-    return <div>
+    return <div className='producto'>
         <label>Nombre: {props.producto.nombre}</label><br/>
         <label>Precio: $ {props.producto.precio} </label><br/>
         <label>Stock: {props.producto.cantidad}</label><br/>

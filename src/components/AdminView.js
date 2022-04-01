@@ -9,37 +9,30 @@ import HistorialVentas from "../page/HistorialVentas";
 
 
 function AdminView() {
-  return <div>
-  <h1>Hola, admin</h1>
-  <div>
-  <BrowserRouter>
+  return <div className="menu">
+  <header>
   <nav>
-
     <ul>
-      <li>
-      <Link to="/AddCliente">Añadir Cliente</Link>
-      </li>
-      <li>
-      <Link to="/AddProducto">Añadir Producto</Link>
-      </li>
-      <li>
-      <Link to="/AddProveedor">Añadir Proveedor</Link>
-      </li>
+      <li>Añadir
+        <ul>
+            <li> <a href="/AddCliente">Añadir Cliente</a></li>
+            <li> <a href="/AddProducto">Añadir Producto</a> </li>
+            <li><a href="/AddProveedor">Añadir Proveedor</a></li>
+        </ul>
+        </li>
+      <li>Gestion
+      <ul>
+            <li><a href="/">Gestion Venta</a></li>
+            <li><a href="/GestionStock">Gestion Stock</a></li>
+    </ul> 
+    </li>
+      <li><a href="/historialVentas">Historial Ventas</a> </li>
     </ul>
+    </nav>
+   </header>
+  <div className="ventanaSecundaria">
+  <BrowserRouter>
 
-    <ul>
-    <li>
-      <Link to="/">Gestion Venta</Link>
-      </li>
-      <li>
-      <Link to="/GestionStock">Gestion Stock</Link>
-      </li>
-      <li>
-      <Link to="/historialVentas">Historial Ventas</Link>
-      </li>
-    </ul>
-
-  </nav>
       <Routes>
       <Route path="/" element={<GestionVenta />} />
       <Route path="/AddCliente" element={<GestionCliente />} />
@@ -48,8 +41,11 @@ function AdminView() {
       <Route path="/GestionStock" element={<GestionStock />} />
       <Route path="/historialVentas" element={<HistorialVentas />} />
     </Routes>
+
   </BrowserRouter>
+
   </div>
+ 
   </div>
 }
 
